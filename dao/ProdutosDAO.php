@@ -1,15 +1,14 @@
 <?php
 
 /*
-require 'conexao.php';
-require '../model/Produtos.php';
-*/
+  require 'conexao.php';
+  require '../model/Produtos.php';
+ */
 
 require 'conexao.php';
-require '../model/Produtos.php';
+'../model/Produtos.php';
 
-
-class ProdutosDAO {
+class ProdutosDAO{
 
     public function insert() {
         $this->idProd = $_POST['idprod'];
@@ -26,7 +25,6 @@ class ProdutosDAO {
         return $stringSalvar;
     }
 
-    
     public function select() {
         try {
             $stringSelecionar = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto;";
@@ -51,12 +49,12 @@ class ProdutosDAO {
 
                 echo "<tr>";
                 echo "<td>" . $this->idProd . "</td>";
-                echo "<td>" . $this->nomeProd  . "</td>";
+                echo "<td>" . $this->nomeProd . "</td>";
                 echo "<td>" . $this->quantidadeProd . "</td>";
                 echo "<td>" . $this->preco . "</td>";
                 echo "<td>" . $this->descricao . "</td>";
-                echo '<td><a href="../controller/produtos.php?idProd='. $row["idProd"] . '">Excluir</a></td>';
-                echo '<td><a href="../formAlter.php?idProd='. $row["idProd"] . '">Alterar</a></td>';
+                echo '<td><a href="../controller/produtos.php?idProd=' . $row["idProd"] . '">Excluir</a></td>';
+                echo '<td><a href="../formAlter.php?idProd=' . $row["idProd"] . '">Alterar</a></td>';
 
                 //echo '<td><a href="javascript:confirmaExclusao('.$row["idprod"].')"><img src="../../icones/file-excel.svg" alt="" width="15" height="30"></a></td>';
                 //echo '<td><a href="javascript:confirmaAlteracao('.$row["idprod"].')">Alterar</a></td>';
@@ -68,28 +66,32 @@ class ProdutosDAO {
         //return $stringSelecionar;
     }
     
+    /*
     
-   
-    public function alter(){
-        try{
-            $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = . '$this->idProd;' ";
-            conexao::conexao()->query($stringSelecionarAlter);
-        } catch (Exception $ex) {
-
+     function selectAll() {
+            $this->idProd = $_GET["idProd"];
+            $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = '. $this->idProd  .' ; ";
+            $query = conexao::conexao()->query($stringSelecionarAlter);
+            
+            
         }
+     
+     */
+
+    public function update() {
+       
+
     }
-    
-   
-    
-    public function delete(){
-         try {
-            $stringDelete = " DELETE from produto WHERE idProd = " .$this->idProd. " ";
+
+    public function delete() {
+        
+        try {
+            $stringDelete = " DELETE from produto WHERE idProd = " . $this->idProd . " ";
             conexao::conexao()->query($stringDelete);
         } catch (Exception $ex) {
             echo "ERRO: " . $ex->getMessage();
         }
         return $stringDelete;
     }
-    
 
 }
