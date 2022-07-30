@@ -6,7 +6,7 @@
  */
 
 require 'conexao.php';
-'../model/Produtos.php';
+require '../model/Produtos.php';
 
 class ProdutosDAO{
 
@@ -75,6 +75,12 @@ class ProdutosDAO{
             
             
         }
+     * 
+     * function selectAll($idProd) {
+        $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = '. $idProd  .' ; ";
+        $query = conexao::conexao()->query($stringSelecionarAlter);
+        
+    }
      
      */
 
