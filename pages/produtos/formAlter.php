@@ -5,8 +5,8 @@
         <title></title>
     </head
     <?php
-    include_once './dao/conexao.php';
-    require './model/Produtos.php';
+    include_once '../../dao/conexao.php';
+    require '../../model/Produtos.php';
     $idProd = $_GET['idProd'];
     $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = $idProd ; ";
     $query = conexao::conexao()->query($stringSelecionarAlter);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <?php
         //require '../model/Produtos.php';
-        require '../dao/ProdutosDAO.php';
+        require '../../dao/ProdutosDAO.php';
      
         $prodDao = new ProdutosDAO();
         $prodDao->insert(); 

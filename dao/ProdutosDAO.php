@@ -1,6 +1,6 @@
 <?php
 require 'conexao.php';
-require '../model/Produtos.php';
+include '../model/Produtos.php';
 
 class ProdutosDAO{
 
@@ -48,7 +48,7 @@ class ProdutosDAO{
                 echo "<td>" . $this->preco . "</td>";
                 echo "<td>" . $this->descricao . "</td>";
                 echo '<td><a href="../controller/produtos.php?idProd=' . $row["idProd"] . '">Excluir</a></td>';
-                echo '<td><a href="../formAlter.php?idProd=' . $row["idProd"] . '">Alterar</a></td>';
+                echo '<td><a href="../../formAlter.php?idProd=' . $row["idProd"] . '">Alterar</a></td>';
 
                 //echo '<td><a href="javascript:confirmaExclusao('.$row["idprod"].')"><img src="../../icones/file-excel.svg" alt="" width="15" height="30"></a></td>';
                 //echo '<td><a href="javascript:confirmaAlteracao('.$row["idprod"].')">Alterar</a></td>';
