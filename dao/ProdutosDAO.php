@@ -1,10 +1,4 @@
 <?php
-
-/*
-  require 'conexao.php';
-  require '../model/Produtos.php';
- */
-
 require 'conexao.php';
 require '../model/Produtos.php';
 
@@ -67,15 +61,7 @@ class ProdutosDAO{
     }
     
     /*
-    
-     function selectAll() {
-            $this->idProd = $_GET["idProd"];
-            $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = '. $this->idProd  .' ; ";
-            $query = conexao::conexao()->query($stringSelecionarAlter);
-            
-            
-        }
-     * 
+   
      * function selectAll($idProd) {
         $stringSelecionarAlter = "SELECT idProd, nomeProd, quantidadeProd, preco, descricao FROM produto where idProd = '. $idProd  .' ; ";
         $query = conexao::conexao()->query($stringSelecionarAlter);
@@ -85,12 +71,23 @@ class ProdutosDAO{
      */
 
     public function update() {
+        $this->idProd = $_GET['idprod'];
+        $this->nomeProd = $_GET['nomeprod'];
+        $this->quantidadeProd = $_GET['quantidadeprod'];
+        $this->preco = $_GET['preco'];
+        $this->descricao = $_GET['descricao'];
+    
+        try {
+            $stringUpdate = "UPDATE produto set nomeProd = '" . $this->nomeProd . "'  , quantidadeProd = '" . $this->quantidadeProd . "' , preco = '" . $this->preco . "' , descricao = '" . $this->descricao . "' where idProd = '" . $this->idProd . "' ;";
+            conexao::conexao()->query($stringUpdate);
+            echo 'Alteração realizada com sucesso! ';
+        } catch (Exception $ex) {
+            echo "ERRO: " . $ex->getMessage();
+        }
        
-
     }
 
     public function delete() {
-        
         try {
             $stringDelete = " DELETE from produto WHERE idProd = " . $this->idProd . " ";
             conexao::conexao()->query($stringDelete);
@@ -99,5 +96,4 @@ class ProdutosDAO{
         }
         return $stringDelete;
     }
-
 }
