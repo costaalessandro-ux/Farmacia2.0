@@ -1,6 +1,6 @@
 <?php
 require 'conexao.php';
-include '../model/Produtos.php';
+require '../../model/Produtos.php';
 
 class ProdutosDAO{
 

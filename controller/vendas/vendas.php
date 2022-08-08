@@ -1,9 +1,9 @@
 <!DOCTYPE html>
  <?php
-        require '../dao/VendasDAO.php';
+        require '../../dao/VendasDAO.php';
         $venDao = new VendasDAO();
         $venDao->insert();
-        echo 'cadastro realizado com sucesso!';
+        echo 'cadastro requirerealizado com sucesso!';
         ?>
 <html>
     <head>

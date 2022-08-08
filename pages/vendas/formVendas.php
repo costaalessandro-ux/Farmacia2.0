@@ -17,7 +17,7 @@
         <div class="container">
             <div class="text-center">
                 <div class="mb-3">
-                    <form action="controller/vendas.php" method="POST">
+                    <form action="../../controller/vendas/vendas.php" method="POST">
                         <div class="lado1">  
                             <p><input type="hidden" name="idVenda" id="idVenda" ></p>
                             NOME DO CLIENTE: 
@@ -46,6 +46,8 @@
         <div class="itens">
             <a href="selectVendas.php"><img src="../icones/card-list.svg" alt="" width="100" height="50"></a>  <a href="../menu/menu.php"><img src="../icones/box-arrow-left.svg" alt="" width="100" height="50"></a>
         </div>
+        <span> <a href="../../controller/produtos/select.php"> Lista de Produtos </a>
+            <p> <a href="../../index.php">Voltar </a></p>
     </center>
 </body>
 

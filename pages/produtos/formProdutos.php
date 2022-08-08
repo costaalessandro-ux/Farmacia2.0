@@ -30,7 +30,9 @@
                 </div>
             </div>
         </div>  
-        <span> <a href="controller/select.php"> Lista de Produtos </a>
+        <span> <a href="../../controller/produtos/select.php"> Lista de Produtos </a><p>
+              <a href="../../index.php">Voltar </a>
+            </p>
     </body>
     
       <?php
