@@ -47,8 +47,8 @@ class ProdutosDAO{
                 echo "<td>" . $this->quantidadeProd . "</td>";
                 echo "<td>" . $this->preco . "</td>";
                 echo "<td>" . $this->descricao . "</td>";
-                echo '<td><a href="../controller/produtos.php?idProd=' . $row["idProd"] . '">Excluir</a></td>';
-                echo '<td><a href="../../formAlter.php?idProd=' . $row["idProd"] . '">Alterar</a></td>';
+                echo '<td><a href="../../controller/produtos/delete.php?idProd=' . $row["idProd"] . '">Excluir</a></td>';
+                echo '<td><a href="../../pages/produtos/formAlter.php?idProd=' . $row["idProd"] . '">Alterar</a></td>';
 
                 //echo '<td><a href="javascript:confirmaExclusao('.$row["idprod"].')"><img src="../../icones/file-excel.svg" alt="" width="15" height="30"></a></td>';
                 //echo '<td><a href="javascript:confirmaAlteracao('.$row["idprod"].')">Alterar</a></td>';
@@ -88,6 +88,7 @@ class ProdutosDAO{
     }
 
     public function delete() {
+        $this->idProd = $_GET['idProd'];
         try {
             $stringDelete = " DELETE from produto WHERE idProd = " . $this->idProd . " ";
             conexao::conexao()->query($stringDelete);

@@ -24,7 +24,7 @@
     <div class="container">
         <div class="text-center">
             <div class="mb-3">
-                <form action="./controller/alter.php" method="GET">
+                <form action="../../controller/produtos/alter.php" method="GET">
                     <input type="hidden" name="idprod" value="<?php echo $idProd;?>">   
                     
                     <div class="lado1">
